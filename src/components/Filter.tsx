@@ -37,7 +37,7 @@ const Filter = () => {
   
   return (
     <>
-    <div className='flex items-center gap-3 p-2'>
+    <div className='flex items-center gap-3 lg:p-2 px-4 pl-0 lg:px-2 lg:pl-2 overflow-x-auto'>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="default">
@@ -114,8 +114,8 @@ const Filter = () => {
         Weak Chapters
       </Button>
     </div>
-    <div className='flex justify-between px-3 sticky top-0 bg-background py-2'>
-    <p className='py-3 px-4'>Showing all Chapters ({chapters.length})</p>
+    <div className='flex justify-between  sticky top-0 bg-background py-2'>
+    <p className='py-3 lg:px-2'>Showing all Chapters ({chapters.length})</p>
     <Button variant="ghost" className='px-4 py-2 flex items-center gap-2 text-sm text-blue-500 hover:text-blue-600'>
         <ArrowsDownUp size={32} color="#0279f7" weight="light" />
         Sort
