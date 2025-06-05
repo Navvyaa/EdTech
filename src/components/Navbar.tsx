@@ -59,7 +59,7 @@ export const Navbar = () => {
                         onClick={() => handleSubjectClick("Mathematics")}>
                         <div className='flex items-center gap-3'>
                             <Image src="/Maths.svg" alt="" className='w-6 h-6 ' width={8} height={8}/>
-                            <p className='text-base text-left'>Mathematics PYQs</p>
+                            <p className='text-base text-left '>Mathematics PYQs</p>
                         </div>
                         <CaretRight size={32} />
                     </Button>
@@ -67,16 +67,16 @@ export const Navbar = () => {
             </nav>
 
             {/* Mobile Header */}
-            <nav className="lg:hidden bg-background text-foreground p-4 sticky top-0 w-full z-10">
+            <nav className="lg:hidden bg-background text-foreground p-4 px-0 sticky top-0 w-full z-10">
                 <div className='flex gap-2 w-full items-center mb-4'>
-                    <ArrowLeftIcon size={24} className='text-foreground' />
+                    <ArrowLeftIcon size={24} className='text-foreground pl-2' />
                     <div className='flex items-center w-full gap-2 justify-center'>
                         <p className='font-bold text-xl'>JEE Main</p>
                     </div>
                 </div>
                 
                 {/* Mobile Subject Tabs */}
-                <div className='flex justify-evenly w-full pt-4 border-b border-border'>
+                <div className='flex justify-around w-full pt-4 border-b border-border'>
                     <Button
                         variant="ghost"
                         size="lg"

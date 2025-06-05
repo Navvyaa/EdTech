@@ -28,7 +28,7 @@ const MainContent = () => {
         <main className='relative w-full h-[100dvh] bg-background lg:border border-subtext-2 flex flex-col overflow-hidden'>
             
             <div className='flex-none p-3'>
-                <div className='sm:flex w-full justify-center flex-col hidden items-center mb-4'>
+                <div className='lg:flex w-full justify-center flex-col hidden items-center mb-4'>
                     <div className='flex justify-center items-center gap-5 mb-4'>
                         {getSubjectIcon(currentSubject)}
                         <h1 className='text-center text-foreground font-bold text-xl'>{currentSubject} PYQs</h1>

@@ -34,7 +34,7 @@ const Filter = () => {
   
   return (
     <>
-    <div className='flex items-center gap-3 lg:p-2 px-4 pl-0 lg:px-2 lg:pl-2 overflow-x-auto'>
+    <div className='flex items-center gap-3 lg:p-2 px-4 pl-0 lg:px-2 lg:pl-2 no-scrollbar overflow-x-auto'>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="default">
@@ -79,7 +79,7 @@ const Filter = () => {
           </DropdownMenuRadioGroup>
         </DropdownMenuContent>
       </DropdownMenu>
-      <div className='w-px h-6 bg-subtext' />
+      <div className="text-subtext" >|</div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" >
