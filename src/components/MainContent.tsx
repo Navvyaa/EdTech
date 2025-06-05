@@ -33,7 +33,7 @@ const MainContent = () => {
                         {getSubjectIcon(currentSubject)}
                         <h1 className='text-center text-foreground font-bold text-xl'>{currentSubject} PYQs</h1>
                     </div>
-                    <p className='text-sm text-subtext py-4 font-medium'>
+                    <p className='xl:text-sm text-xs text-subtext py-4 font-medium'>
                         Chapter-wise Collection of {currentSubject} PYQs
                     </p>
                 </div>

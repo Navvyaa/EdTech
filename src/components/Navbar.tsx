@@ -39,7 +39,7 @@ export const Navbar = () => {
                     <Image src="/exam logo.svg" alt="Exam Logo" width={36} height={36} />
                     <p className='font-bold text-xl'>JEE Main</p>
                 </div>
-                <p className='pt-4 pb-6 text-sm text-muted-foreground px-3 font-medium'>2025 - 2009 | 173 Papers | 15825 Qs</p>
+                <p className='pt-4 pb-6 text-xs xl:text-sm text-muted-foreground px-3 font-medium'>2025 - 2009 | 173 Papers | 15825 Qs</p>
                 
                 <div className='flex flex-col items-center gap-4 w-full'>
                     <Button
