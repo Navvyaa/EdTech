@@ -1,7 +1,7 @@
 "use client"
 import { CaretRight,  ArrowLeftIcon } from '@phosphor-icons/react'
 import Image from 'next/image'
-import React from 'react'
+import React, {useState ,useEffect} from 'react'
 import { Button } from "@/components/ui/button"
 import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
 import { setCurrentSubject } from '@/features/chapterSlice'
@@ -11,17 +11,25 @@ import { useTheme } from 'next-themes'
 
 export const Navbar = () => {
     const dispatch = useAppDispatch();
+    const [mounted, setMounted] = useState(false);
+
     const currentSubject = useAppSelector(state => state.chapters.filters.currentSubject);
     const { theme,systemTheme } = useTheme();
-    const isDarkTheme = theme === "system" 
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+    const isDarkTheme = mounted? (theme === "system" 
     ? systemTheme === "dark"
-    : theme === "dark";
+    : theme === "dark"
+    ):false;
 
 
 
     const handleSubjectClick = (subject: SubjectName) => {
         dispatch(setCurrentSubject(subject));
     };
+
+    
 
     return (
         <>
@@ -35,7 +43,7 @@ export const Navbar = () => {
                 
                 <div className='flex flex-col items-center gap-4 w-full'>
                     <Button
-                         variant={currentSubject === "Physics" ? (isDarkTheme ? "secondary" : "default") : "ghost"}
+                         variant={currentSubject === "Physics" && mounted? (isDarkTheme  ? "secondary" : "default") : "ghost"}
                         size={"lg"}
                         className="w-[75%] p-2 py-6 text-lg flex items-center justify-between"
                         onClick={() => handleSubjectClick("Physics")}>
