@@ -2,8 +2,8 @@
 import { useAppSelector } from '@/hooks/hooks'
 import { Skeleton } from "@/components/ui/skeleton"
 import { selectFilteredChapters } from '@/redux/selectors/chapterSelectors'
-import { ArrowDown, ArrowUp, ArrowsDownUp } from '@phosphor-icons/react'
-import { Button } from './ui/button'
+import { ArrowDown, ArrowUp } from '@phosphor-icons/react'
+
 export const ChapterList = () => {
     const chapters = useAppSelector(selectFilteredChapters);
     const loading = useAppSelector(state => state.chapters.loading);

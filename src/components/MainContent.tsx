@@ -2,10 +2,8 @@
 import Image from 'next/image'
 import React from 'react'
 import Filter from './Filter'
-import { useAppDispatch, useAppSelector } from '../hooks/hooks';
-import { setClassFilter, setStatusFilter } from '@/features/chapterSlice';
+import {  useAppSelector } from '../hooks/hooks';
 import { SubjectName } from '@/types/types';
-import { Atom, MathOperations, Flask } from '@phosphor-icons/react'
 import { ChapterList } from './ChapterList';
 
 
@@ -22,9 +20,9 @@ const getSubjectIcon = (subject: SubjectName) => {
 
 
 const MainContent = () => {
-    const dispatch = useAppDispatch();
+    
     const currentSubject = useAppSelector(state => state.chapters.filters.currentSubject)
-    const filters = useAppSelector(state => state.chapters.filters);
+    
 
     return (
         <main className='relative w-full h-[100dvh] bg-background lg:border border-subtext-2 flex flex-col overflow-hidden'>

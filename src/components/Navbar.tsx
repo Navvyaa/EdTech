@@ -22,7 +22,7 @@ export const Navbar = () => {
             {/* Desktop Sidebar */}
             <nav className="hidden lg:flex bg-background text-foreground p-4 sticky flex-col items-center w-1/3 z-10 h-[100dvh]">
                 <div className='flex gap-2 w-full justify-center items-center'>
-                    <img src="/exam logo.svg" alt="" />
+                    <Image src="/exam logo.svg" alt="Exam Logo" width={36} height={36} />
                     <p className='font-bold text-xl'>JEE Main</p>
                 </div>
                 <p className='pt-4 pb-6 text-sm text-muted-foreground px-3 font-medium'>2025 - 2009 | 173 Papers | 15825 Qs</p>
