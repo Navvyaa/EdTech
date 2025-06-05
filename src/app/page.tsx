@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className=" relative bg-background text-foreground px-6 rounded-lg flex flex-col sm:flex-row">
+    <div className=" relative  bg-background text-foreground px-6 rounded-lg flex flex-col  h-[100dvh] sm:flex-row">
       <Navbar />
       <MainContent />
       

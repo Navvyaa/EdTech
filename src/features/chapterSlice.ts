@@ -53,6 +53,7 @@ const chapterSlice = createSlice({
         },
         setCurrentSubject:(state, action: PayloadAction<"Physics" | "Chemistry" | "Mathematics">) => {
             state.filters.currentSubject=action.payload;
+            state.filters.unit= "All";
         }
     },
     extraReducers: (builder) => {
