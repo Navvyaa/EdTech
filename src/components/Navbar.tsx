@@ -3,7 +3,7 @@ import { CaretRight,  ArrowLeftIcon } from '@phosphor-icons/react'
 import Image from 'next/image'
 import React from 'react'
 import { Button } from "@/components/ui/button"
-import { useAppDispatch, useAppSelector, useThemeCheck } from '@/hooks/hooks'
+import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
 import { setCurrentSubject } from '@/features/chapterSlice'
 import { SubjectName } from '@/types/types'
 import { useTheme } from 'next-themes'
@@ -17,7 +17,7 @@ export const Navbar = () => {
     ? systemTheme === "dark"
     : theme === "dark";
 
-console.log("Current Theme:", theme, "Is Dark:", isDarkTheme);
+
 
     const handleSubjectClick = (subject: SubjectName) => {
         dispatch(setCurrentSubject(subject));
