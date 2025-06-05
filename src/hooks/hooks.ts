@@ -6,5 +6,5 @@ export const useAppDispatch = () => useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useThemeCheck = () => {
     const { theme } = useTheme();
-    return theme === "dark";
-  };
+    return theme === 'dark';
+};

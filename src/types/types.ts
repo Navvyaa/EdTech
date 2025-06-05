@@ -35,7 +35,7 @@ export interface ChapterData {
 
 export interface ChapterFilters {
   classLevel: ClassLevel;
-  unit: string;
+  units: string[];
   status: FilterStatus;
   showWeakChapters: boolean;
   currentSubject: SubjectName ;

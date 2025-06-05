@@ -6,13 +6,19 @@ import { Button } from "@/components/ui/button"
 import { useAppDispatch, useAppSelector, useThemeCheck } from '@/hooks/hooks'
 import { setCurrentSubject } from '@/features/chapterSlice'
 import { SubjectName } from '@/types/types'
+import { useTheme } from 'next-themes'
 
 
 export const Navbar = () => {
     const dispatch = useAppDispatch();
     const currentSubject = useAppSelector(state => state.chapters.filters.currentSubject);
-    const isDarkTheme = useThemeCheck();
-    
+    const { theme,systemTheme } = useTheme();
+    const isDarkTheme = theme === "system" 
+    ? systemTheme === "dark"
+    : theme === "dark";
+
+console.log("Current Theme:", theme, "Is Dark:", isDarkTheme);
+
     const handleSubjectClick = (subject: SubjectName) => {
         dispatch(setCurrentSubject(subject));
     };
@@ -29,7 +35,7 @@ export const Navbar = () => {
                 
                 <div className='flex flex-col items-center gap-4 w-full'>
                     <Button
-                        variant={currentSubject === "Physics" ? (isDarkTheme ? "secondary" : "default") : "ghost"}
+                         variant={currentSubject === "Physics" ? (isDarkTheme ? "secondary" : "default") : "ghost"}
                         size={"lg"}
                         className="w-[75%] p-2 py-6 text-lg flex items-center justify-between"
                         onClick={() => handleSubjectClick("Physics")}>

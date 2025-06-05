@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { ChapterState, ChapterData, ClassLevel, FilterStatus } from '@/types/types';
+import { ChapterState, ChapterData, ClassLevel, FilterStatus, SubjectName } from '@/types/types';
 import mockChaptersData from '@/data/all_subjects_chapter_data.json';
 
 export const fetchChapters = createAsyncThunk(
@@ -20,7 +20,7 @@ const initialState: ChapterState = {
     chapters: [],
     filters: {
         classLevel: "All",
-        unit: "All",
+        units: ["All"],
         status: "All",
         showWeakChapters: false,
         currentSubject: "Physics"
@@ -39,8 +39,8 @@ const chapterSlice = createSlice({
         setClassFilter: (state, action: PayloadAction<ClassLevel>) => {
             state.filters.classLevel = action.payload;
         },
-        setUnitFilter: (state, action: PayloadAction<string>) => {
-            state.filters.unit = action.payload;
+        setUnitFilter: (state, action: PayloadAction<string[]>) => {
+            state.filters.units = action.payload;
         },
         setStatusFilter: (state, action: PayloadAction<FilterStatus>) => {
             state.filters.status = action.payload;
@@ -51,9 +51,9 @@ const chapterSlice = createSlice({
         resetFilters: (state) => {
             state.filters = initialState.filters;
         },
-        setCurrentSubject:(state, action: PayloadAction<"Physics" | "Chemistry" | "Mathematics">) => {
+        setCurrentSubject:(state, action: PayloadAction<SubjectName>) => {
             state.filters.currentSubject=action.payload;
-            state.filters.unit= "All";
+            state.filters.units= ["All"];
         }
     },
     extraReducers: (builder) => {

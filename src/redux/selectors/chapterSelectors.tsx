@@ -28,8 +28,9 @@ export const selectFilteredChapters = createSelector(
       if (filters.classLevel !== "All" && 
           chapter.class !== filters.classLevel) return false;
       
-      if (filters.unit !== "All" && 
-          chapter.unit !== filters.unit) return false;
+      // Modified unit filter check
+      if (!filters.units.includes("All") && 
+          !filters.units.includes(chapter.unit)) return false;
       
       if (filters.status !== "All" && 
           chapter.status !== filters.status) return false;
